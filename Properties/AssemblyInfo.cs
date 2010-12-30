@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("AppHarborMotoWilliams")]
+[assembly: AssemblyTitle("AppHarborMvc3Application")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("AppHarborMotoWilliams")]
+[assembly: AssemblyProduct("AppHarborMvc3Application")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("c4988669-220e-4100-894f-769f1c91a0fa")]
+[assembly: Guid("30e50c41-ba48-41c0-86f7-3d83b0a21493")]
 
 // Version information for an assembly consists of the following four values:
 //

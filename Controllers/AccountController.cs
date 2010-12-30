@@ -7,12 +7,10 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
-using AppHarborMotoWilliams.Models;
+using AppHarborMvc3Application.Models;
 
-namespace AppHarborMotoWilliams.Controllers
+namespace AppHarborMvc3Application.Controllers
 {
-
-	[HandleError]
 	public class AccountController : Controller
 	{
 
@@ -44,7 +42,7 @@ namespace AppHarborMotoWilliams.Controllers
 				if (MembershipService.ValidateUser(model.UserName, model.Password))
 				{
 					FormsService.SignIn(model.UserName, model.RememberMe);
-					if (!String.IsNullOrEmpty(returnUrl))
+					if (Url.IsLocalUrl(returnUrl))
 					{
 						return Redirect(returnUrl);
 					}
@@ -80,7 +78,7 @@ namespace AppHarborMotoWilliams.Controllers
 
 		public ActionResult Register()
 		{
-			ViewData["PasswordLength"] = MembershipService.MinPasswordLength;
+			ViewModel.PasswordLength = MembershipService.MinPasswordLength;
 			return View();
 		}
 
@@ -104,7 +102,7 @@ namespace AppHarborMotoWilliams.Controllers
 			}
 
 			// If we got this far, something failed, redisplay form
-			ViewData["PasswordLength"] = MembershipService.MinPasswordLength;
+			ViewModel.PasswordLength = MembershipService.MinPasswordLength;
 			return View(model);
 		}
 
@@ -115,7 +113,7 @@ namespace AppHarborMotoWilliams.Controllers
 		[Authorize]
 		public ActionResult ChangePassword()
 		{
-			ViewData["PasswordLength"] = MembershipService.MinPasswordLength;
+			ViewModel.PasswordLength = MembershipService.MinPasswordLength;
 			return View();
 		}
 
@@ -136,7 +134,7 @@ namespace AppHarborMotoWilliams.Controllers
 			}
 
 			// If we got this far, something failed, redisplay form
-			ViewData["PasswordLength"] = MembershipService.MinPasswordLength;
+			ViewModel.PasswordLength = MembershipService.MinPasswordLength;
 			return View(model);
 		}
 
