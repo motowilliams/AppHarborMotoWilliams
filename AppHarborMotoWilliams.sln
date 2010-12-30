@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppHarborMotoWilliams", "AppHarborMotoWilliams.csproj", "{D202A3C9-D635-4A46-8C5A-1156256B9EB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppHarborMotoWilliams.Tests", "..\AppHarborMotoWilliams.Tests\AppHarborMotoWilliams.Tests.csproj", "{D1733B24-69AF-4351-805F-0527D8FA5FEC}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,10 +13,6 @@ Global
 		{D202A3C9-D635-4A46-8C5A-1156256B9EB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D202A3C9-D635-4A46-8C5A-1156256B9EB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D202A3C9-D635-4A46-8C5A-1156256B9EB7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D1733B24-69AF-4351-805F-0527D8FA5FEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D1733B24-69AF-4351-805F-0527D8FA5FEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D1733B24-69AF-4351-805F-0527D8FA5FEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D1733B24-69AF-4351-805F-0527D8FA5FEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
