@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 
-namespace AppHarborMvc3Application.Models
+namespace AppHarborMotoWilliams2.Models
 {
 
 	#region Models

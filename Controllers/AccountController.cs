@@ -7,9 +7,9 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
-using AppHarborMvc3Application.Models;
+using AppHarborMotoWilliams2.Models;
 
-namespace AppHarborMvc3Application.Controllers
+namespace AppHarborMotoWilliams2.Controllers
 {
 	public class AccountController : Controller
 	{
@@ -78,7 +78,7 @@ namespace AppHarborMvc3Application.Controllers
 
 		public ActionResult Register()
 		{
-			ViewModel.PasswordLength = MembershipService.MinPasswordLength;
+			ViewBag.PasswordLength = MembershipService.MinPasswordLength;
 			return View();
 		}
 
@@ -102,7 +102,7 @@ namespace AppHarborMvc3Application.Controllers
 			}
 
 			// If we got this far, something failed, redisplay form
-			ViewModel.PasswordLength = MembershipService.MinPasswordLength;
+			ViewBag.PasswordLength = MembershipService.MinPasswordLength;
 			return View(model);
 		}
 
@@ -113,7 +113,7 @@ namespace AppHarborMvc3Application.Controllers
 		[Authorize]
 		public ActionResult ChangePassword()
 		{
-			ViewModel.PasswordLength = MembershipService.MinPasswordLength;
+			ViewBag.PasswordLength = MembershipService.MinPasswordLength;
 			return View();
 		}
 
@@ -134,7 +134,7 @@ namespace AppHarborMvc3Application.Controllers
 			}
 
 			// If we got this far, something failed, redisplay form
-			ViewModel.PasswordLength = MembershipService.MinPasswordLength;
+			ViewBag.PasswordLength = MembershipService.MinPasswordLength;
 			return View(model);
 		}
 
