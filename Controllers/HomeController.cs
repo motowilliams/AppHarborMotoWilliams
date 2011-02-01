@@ -1,4 +1,7 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Web.Mvc;
+using AppHarborMotoWilliams.Models;
 using AppHarborMotoWilliams.Services;
 
 namespace AppHarborMotoWilliams.Controllers
@@ -14,8 +17,10 @@ namespace AppHarborMotoWilliams.Controllers
 
 		public ActionResult Index()
 		{
-			ViewBag.Message = "Welcome to ASP.NET MVC!";
-			ViewBag.Message += "Here are all the bikes " + string.Join(",", _motoService.GetBikes());
+			var motorcycleContext = new MotorcycleContext();
+			List<Motorcycle> motorcycles = motorcycleContext.Motorcycles.ToList();
+			string bikes = string.Join(",", motorcycles.Select(x => x.Make));
+			ViewBag.Message += "Here are all the bikes " + bikes;
 			return View();
 		}
 

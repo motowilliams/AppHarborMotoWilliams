@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Data.Entity.Database;
 using System.Web.Mvc;
 using System.Web.Routing;
+using AppHarborMotoWilliams.Models;
 
 namespace AppHarborMotoWilliams
 {
@@ -25,6 +27,8 @@ namespace AppHarborMotoWilliams
 
 		protected void Application_Start()
 		{
+			DbDatabase.SetInitializer<MotorcycleContext>(new MotorcycleContextInitializer());
+
 			AreaRegistration.RegisterAllAreas();
 
 			RegisterGlobalFilters(GlobalFilters.Filters);
