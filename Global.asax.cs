@@ -27,7 +27,7 @@ namespace AppHarborMotoWilliams
 
 		protected void Application_Start()
 		{
-			DbDatabase.SetInitializer<MotorcycleContext>(new MotorcycleContextInitializer());
+			//DbDatabase.SetInitializer<MotorcycleContext>(new MotorcycleContextInitializer());
 
 			AreaRegistration.RegisterAllAreas();
 

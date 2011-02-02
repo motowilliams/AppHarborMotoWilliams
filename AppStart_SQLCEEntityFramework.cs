@@ -19,7 +19,7 @@ namespace AppHarborMotoWilliams
 			// Sets the default database initialization code for working with Sql Server Compact databases
 			// Uncomment this line and replace CONTEXT_NAME with the name of your DbContext if you are 
 			// using your DbContext to create and manage your database
-			//DbDatabase.SetInitializer<MotorcycleContext>(new MotorcycleContextInitializer());
+			DbDatabase.SetInitializer<MotorcycleContext>(new MotorcycleContextInitializer());
 		}
 	}
 
