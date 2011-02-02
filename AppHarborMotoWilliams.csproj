@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Elmah">
+      <HintPath>packages\elmah.1.1\lib\Elmah.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>packages\EFCodeFirst.0.8\lib\EntityFramework.dll</HintPath>
     </Reference>
@@ -80,6 +83,7 @@
     <Compile Include="Models\MotorcycleContext.cs" />
     <Compile Include="Models\Motorcycle.cs" />
     <Compile Include="Models\MotorcycleContextInitializer.cs" />
+    <Compile Include="Repositories\MotorcycleRepository.cs" />
     <Compile Include="Services\ILogger.cs" />
     <Compile Include="Services\IMotoService.cs" />
     <Compile Include="Services\NullLogger.cs" />

@@ -6,7 +6,12 @@ using System.Web;
 
 namespace AppHarborMotoWilliams.Models
 {
-	public class MotorcycleContext : DbContext
+	public interface IMotorcycleContext
+	{
+		DbSet<Motorcycle> Motorcycles { get; set; }
+	}
+
+	public class MotorcycleContext : DbContext, IMotorcycleContext
 	{
 		public DbSet<Motorcycle> Motorcycles { get; set; }
 	}
