@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web.Mvc;
 using System.Xml.Linq;
@@ -33,12 +35,12 @@ namespace AppHarborMotoWilliams.Controllers
 
 		public JsonResult Hello()
 		{
-			var foo = new []{ 
+			var foo = new[]{ 
 			new { Name = "Dakota", Age = 5 },
 			new { Name = "Logan", Age = 3 },
 			new { Name = "Shiloh", Age = 1 }
 			};
-			return Json(foo,JsonRequestBehavior.AllowGet);
+			return Json(foo, JsonRequestBehavior.AllowGet);
 		}
 
 		public ActionResult HandleCall(string To, string From, string CallSid)
@@ -61,5 +63,16 @@ namespace AppHarborMotoWilliams.Controllers
 			};
 		}
 
+		public ActionResult HandleRecording(string RecordingUrl, string RecordingDuration, string Digits)
+		{
+			var connectionString = ConfigurationManager.ConnectionStrings["TwilioDB"].ConnectionString;
+			var sqlConnection = new SqlConnection(connectionString);
+			var cmdText = string.Format("INSERT INTO [db765].[dbo].[CallLog]([RecordingUrl],[RecordingDuration],[Digits])VALUES('{0}','{1}','{2}')", RecordingUrl, RecordingDuration, Digits);
+			sqlConnection.Open();
+			var sqlCommand = new SqlCommand(cmdText,sqlConnection);
+			sqlCommand.ExecuteNonQuery();
+			sqlConnection.Close();
+			return new EmptyResult();
+		}
 	}
 }
